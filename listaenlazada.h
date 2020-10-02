@@ -14,7 +14,7 @@ public:
     ListaEnlazada(){
         this->cabeza = nullptr;
     }
-    void Agregar(T item){ //O(1) - 4
+    void Agregar(T item){ //O(1) - 5
         Nodo<T>* nuevoNodo = new Nodo<T>();
         nuevoNodo->dato = item;
         if(this->cabeza != nullptr)nuevoNodo->siguiente = this->cabeza;
