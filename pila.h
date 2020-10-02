@@ -15,17 +15,17 @@ public:
         this->cantidad = 0;
         this->almacenamiento = new ListaEnlazada<T>();
     }
-    void Push(T item){// O(1) - 4
+    void Push(T item){// O(1) - 7
         almacenamiento->Agregar(item);
         cantidad++;
     }
-    void Pop(){ //O(1) - 5
+    void Pop(){ //O(1) - 7
         if(cantidad > 0){
             almacenamiento->EliminarInicial();
              cantidad--;
         }
     }
-    T Peek(){ // O(1) - 2
+    T Peek(){ // O(1) - 3
         if(cantidad > 0){
             return almacenamiento->ObtenerInicial();
         }else{
