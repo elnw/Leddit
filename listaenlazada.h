@@ -62,16 +62,16 @@ public:
         return nullptr;
     }
 
-    T ObtenerInicial(){
+    T ObtenerInicial(){ //O(1) - 2
          return this->cabeza->dato;
     }
-    void EliminarInicial(){
+    void EliminarInicial(){ // O(1) - 5
         Nodo<T>* prim = this->cabeza->siguiente;
         this->cabeza = nullptr;
         cabeza = prim;
     }
 
-    Nodo<T> *ObtenerIterador(){
+    Nodo<T> *ObtenerIterador(){ //O(1) - 2
         return this->cabeza;
     }
 };
