@@ -14,13 +14,13 @@ public:
     ListaEnlazada(){
         this->cabeza = nullptr;
     }
-    void Agregar(T item){
+    void Agregar(T item){ //O(1) - 5
         Nodo<T>* nuevoNodo = new Nodo<T>();
         nuevoNodo->dato = item;
         if(this->cabeza != nullptr)nuevoNodo->siguiente = this->cabeza;
         cabeza = nuevoNodo;
     }
-    bool Existe(T item){
+    bool Existe(T item){ // O(N) - 4 + 5N
         bool existeItem = false;
         Nodo<T>* iterador = this->cabeza;
 
@@ -34,7 +34,7 @@ public:
 
         return existeItem;
     }
-    T Existe(T item, std::function<bool(T,T)> comp){
+    T Existe(T item, std::function<bool(T,T)> comp){ // O(N) - 3 + 6N
         Nodo<T>* iterador = this->cabeza;
 
         while(iterador != nullptr){
@@ -47,7 +47,7 @@ public:
         return nullptr;
     }
 
-    T Obtener(int n){
+    T Obtener(int n){ // O(N) - 4 + 7N
         int contador = 0;
         Nodo<T>* iterador = this->cabeza;
 
@@ -62,16 +62,16 @@ public:
         return nullptr;
     }
 
-    T ObtenerInicial(){
+    T ObtenerInicial(){ //O(1) - 2
          return this->cabeza->dato;
     }
-    void EliminarInicial(){
+    void EliminarInicial(){ // O(1) - 5
         Nodo<T>* prim = this->cabeza->siguiente;
         this->cabeza = nullptr;
         cabeza = prim;
     }
 
-    Nodo<T> *ObtenerIterador(){
+    Nodo<T> *ObtenerIterador(){ //O(1) - 2
         return this->cabeza;
     }
 };
