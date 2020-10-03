@@ -8,7 +8,7 @@ OfertasForm::OfertasForm(CGestion *og, QWidget *parent) :
     ui->setupUi(this);
     this->objGestion = og;
     CargarOferta();
-
+    ui->lblTitulo->setText("Hola, " + QString::fromStdString(objGestion->ObtenerNombreActual()) + ", mira los post de hoy");
 }
 
 OfertasForm::~OfertasForm()
@@ -27,7 +27,6 @@ void OfertasForm::CargarOferta(){
         Publicacion *objPublicacion;
 
         objPublicacion = objGestion->publicaciones->Peek();
-
         ui->lblEdades->show();
         ui->lblContenido->show();
         ui->lblProfesional->show();

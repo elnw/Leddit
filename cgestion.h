@@ -27,6 +27,7 @@ public:
     Usuario *IniciarSesion(std::string usuario, std::string contrasena);
     Usuario *ObtenerUsuario(std::string usuario);
     std::string ObtenerUsernameActual();
+    std::string ObtenerNombreActual();
     void AgregarPublicacionUsuarioActual(Publicacion publicacion);
     void RegistrarUsuario(Usuario *usuario);
     void CrearPublicacion(Publicacion *publicacion);

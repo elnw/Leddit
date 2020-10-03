@@ -111,6 +111,10 @@ std::string CGestion::ObtenerUsernameActual(){
     return this->sesionActual->ObtenerUsername();
 }
 
+std::string CGestion::ObtenerNombreActual(){
+    return this->sesionActual->ObtenerNombreCompleto();
+}
+
 void CGestion::AgregarPublicacionUsuarioActual(Publicacion publicacion){
     this->sesionActual->AgregarPublicacion(publicacion);
 }
